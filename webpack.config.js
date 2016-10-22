@@ -3,7 +3,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 var config = {
 
-  entry: './src/index.js',
+  entry: './src/client/index.js',
 
   output: {
     path: 'dist',
