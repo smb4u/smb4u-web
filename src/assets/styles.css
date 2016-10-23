@@ -1,9 +1,36 @@
 html {
   width: 100%;
   height: 100%;
+  /*background: #333;*/
 }
 
 .clothing {
-  max-width: 15%;
-  max-height: 15%;
+  max-width: 35%;
+  max-height: 35%;
+  display: inline-block;
+  border: 1px grey solid;
+  width: 250px;
+
 }
+
+.description {
+  align-items: right;
+  margin-right: 35%;
+  margin-left: 10%;
+  display: inline-block;
+  background: #fff;
+  /*margin-top: 30px !important;*/
+  padding: 10px;
+
+
+}
+
+.category {
+  font-weight: bold;
+}
+
+/*@media (max-width: 990px) {
+  .description {
+    float: right;
+  }
+}*/
