@@ -29,6 +29,11 @@ html {
   font-weight: bold;
 }
 
+.menubtn {
+  margin: 5px;
+  width: 250px;
+}
+
 /*@media (max-width: 990px) {
   .description {
     float: right;

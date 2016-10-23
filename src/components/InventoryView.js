@@ -10,7 +10,7 @@ const InventoryView = ({ inventory, changeText }) => (
         src={item.url}
         alt={index}
       />
-      <div className="description">
+      <div className="right-align description">
         <p>Category:
           <RIEInput
             value={item.category}

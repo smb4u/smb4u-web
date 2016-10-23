@@ -4,7 +4,7 @@ const NavList = ({ options, viewChange }) => (
   <div className="col s12 m6 l3">
     {options.map((option, index) => (
       <div key={index}>
-        <button
+        <button className="btn menubtn"
           onClick={() => viewChange(option)}
         >
           {option}
