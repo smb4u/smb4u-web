@@ -18,6 +18,6 @@ const NavList = ({ options, viewChange }) => (
 NavList.propTypes = {
   options: PropTypes.array.isRequired,
   viewChange: PropTypes.func.isRequired,
-}
+};
 
 export default NavList;

@@ -26,6 +26,17 @@ var config = {
         query: {
           presets: ['react', 'es2015']
         }
+      },
+      {
+        test: /\.(png|gif|jpe?g|svg)$/i,
+        loader: 'url',
+        query: {
+          limit: 10000,
+        },
+      },
+      {
+        test: /\.scss$/,
+        loaders: ["style", "css", "sass"]
       }
     ]
   }
