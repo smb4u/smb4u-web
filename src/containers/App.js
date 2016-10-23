@@ -48,38 +48,51 @@ class App extends Component {
     }
     setInterval(() => {
       const URL = 'http://ec2-35-161-63-144.us-west-2.compute.amazonaws.com:8000/getInventory';
-      $.ajax({
-        url: URL,
-        method: 'GET',
-        headers: {
-          'Content-type': 'application/json',
-          'Access-Control-Allow-Origin': '*',
-        },
-        success: (data) => {
-          console.log('DATA: ', data);
-        },
-        error: (req, status, err) => {
-          console.log('Error: ', req, status, err);
-        }
-      });
-      // fetch(URL, {
+
+      // $.ajax({
+      //   url: URL,
       //   method: 'GET',
       //   headers: {
+      //     'Access-Control-Allow-Credentials': true,
       //     'Content-type': 'application/json',
+      //     'Access-Control-Allow-Origin': '*',
       //   },
+      //   data: {},
       //   mode: 'no-cors',
-      //   // credentials: 'same-origin',
-      // })
-      // .then(res => {
-      //   console.log('RES: ', JSON.stringify(res));
-      //   return JSON.stringify(res.body);
-      // })
-      // .then(result => {
-      //   console.log('RESULT: ', result);
-      // })
-      // .catch(err => {
-      //   console.log('ERROR: ', err);
+      //   success: (data) => {
+      //     console.log('DATA: ', data);
+      //   },
+      //   error: (req, status, err) => {
+      //     console.log('Error: ', req, status, err);
+      //   }
       // });
+
+      // $.get(URL,(result) => {
+      //   console.log(result);
+      // })
+
+
+      fetch("http://ec2-35-161-63-144.us-west-2.compute.amazonaws.com:8000/getInventory", {
+        method: 'GET',
+        headers: {
+          'Access-Control-Allow-Credentials': true,
+          'Content-type': 'application/json',
+          'Access-Control-Allow-Origin': '*'
+        }
+        // data: {},
+        // credentials: 'same-origin',
+      })
+      // .then(res => {
+      //   console.log('RES: ', res);
+      //   // JSON.stringify(res);
+      // })
+      .then(result => {
+        console.log('RESULT: ', result);
+      })
+      .catch(err => {
+        console.log('ERROR: ', err);
+      });
+
     }, 1000);
   }
   render() {
