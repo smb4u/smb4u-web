@@ -4,13 +4,15 @@ import { RIEInput, RIENumber } from 'riek';
 const InventoryView = ({ inventory, changeText }) => (
   <ul>
   {inventory.map((item, index) => (
-    <li key={index}>
+    <li className="something" key={index}>
+    <div className="clothingbox">
       <img
         className="clothing"
         src={item.url}
         alt={index}
       />
-      <div className="description">
+      </div>
+      <div className="right-align description">
         <p>Category:
           <RIEInput
             value={item.category}
