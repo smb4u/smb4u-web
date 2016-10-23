@@ -3,7 +3,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 var config = {
 
-  entry: './src/client/index.js',
+  entry: './src/index.js',
 
   output: {
     path: 'dist',
@@ -20,7 +20,7 @@ var config = {
   module: {
     loaders: [
       {
-        test: /\.js$/,
+        test: /\.jsx?$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
         query: {
@@ -29,6 +29,6 @@ var config = {
       }
     ]
   }
-}
+};
 
 module.exports = config;
