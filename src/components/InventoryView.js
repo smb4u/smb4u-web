@@ -1,29 +1,48 @@
 import React, { PropTypes } from 'react';
+import { RIEInput, RIENumber } from 'riek';
 
-const InventoryView = ({ inventory }) => (
-  // <div className="col s12 m8 l12">
+const InventoryView = ({ inventory, changeText }) => (
   <ul>
   {inventory.map((item, index) => (
     <li key={index}>
       <img
         className="clothing"
         src={item.url}
+        alt={index}
       />
       <div className="description">
-      <p className="category">Category: {item.category}</p>
-      <p>QRCode: {item.QRCode}</p>
-      <p>Description: {item.description}</p>
-      <p>Price: {item.price}</p>
+        <p>Category:
+          <RIEInput
+            value={item.category}
+            propName={'category'}
+            change={(textObj) => changeText(textObj, item.QRCode, 'category')}
+          />
+        </p>
+        <p>QRCode: {item.QRCode}</p>
+        <p>Description:
+          <RIEInput
+            value={item.description}
+            propName={'description'}
+            change={(textObj) => changeText(textObj, item.QRCode, 'description')}
+          />
+        </p>
+        <p>Price:
+          <RIENumber
+            value={item.price}
+            propName={'price'}
+            change={(textObj) => changeText(textObj, item.QRCode, 'price')}
+          />
+        </p>
       </div>
     </li>
   ))
   }
   </ul>
-  // </div>
 );
 
 InventoryView.propTypes = {
   inventory: PropTypes.array.isRequired,
+  changeText: PropTypes.func,
 };
 
 export default InventoryView;
