@@ -1,0 +1,9 @@
+html {
+  width: 100%;
+  height: 100%;
+}
+
+.clothing {
+  max-width: 15%;
+  max-height: 15%;
+}

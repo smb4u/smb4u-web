@@ -1,16 +1,23 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import InventoryView from './InventoryView';
 import AnalyticsView from './AnalyticsView';
+import MessagesView from './MessagesView';
 
-const Dashboard = ({ currentView }) => {
+const Dashboard = ({ currentView, inventory }) => {
   let view;
   if (currentView === 'Manage Inventory') {
     view = (
-      <InventoryView />
+      <InventoryView
+        inventory={inventory}
+      />
     );
   } else if (currentView === 'Analytics') {
     view = (
       <AnalyticsView />
+    );
+  } else if (currentView === 'Messages') {
+    view = (
+      <MessagesView />
     );
   }
   return (
@@ -18,6 +25,11 @@ const Dashboard = ({ currentView }) => {
       {view}
     </div>
   );
+};
+
+Dashboard.propTypes = {
+  currentView: PropTypes.string,
+  inventory: PropTypes.array,
 };
 
 export default Dashboard;
