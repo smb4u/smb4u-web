@@ -17,22 +17,22 @@ const InventoryView = ({ inventory, changeText }) => (
           <RIEInput
             value={item.category}
             propName={'category'}
-            change={(textObj) => changeText(textObj, item.QRCode, 'category')}
+            change={(textObj) => changeText(textObj, item.QRcode, 'category')}
           />
         </p>
-        <p>QRCode: {item.QRCode}</p>
+        <p>QRCode: {item.QRcode}</p>
         <p>Description:
           <RIEInput
             value={item.description}
             propName={'description'}
-            change={(textObj) => changeText(textObj, item.QRCode, 'description')}
+            change={(textObj) => changeText(textObj, item.QRcode, 'description')}
           />
         </p>
         <p>Price:
           <RIENumber
             value={item.price}
             propName={'price'}
-            change={(textObj) => changeText(textObj, item.QRCode, 'price')}
+            change={(textObj) => changeText(textObj, item.QRcode, 'price')}
           />
         </p>
       </div>
