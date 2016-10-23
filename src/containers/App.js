@@ -69,18 +69,39 @@ const INVENTORY = {
   ],
 };
 
+const CATEGORIES = [
+  { id: "1", text: 'Jacket' },
+  { id: "2", text: 'Pants' },
+  { id: "3", text: 'Shirt' },
+  { id: "4", text: 'Shoes' },
+  { id: "5", text: 'Sweater' },
+];
+
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       currentView: 'Manage Inventory',
+      inventoryList: [],
     };
     this.renderView = this.renderView.bind(this);
+    this.changeText = this.changeText.bind(this);
+  }
+  componentDidMount() {
+    this.setState({
+      inventoryList: INVENTORY.inventory,
+    });
   }
   renderView(view) {
     this.setState({
       currentView: view,
     });
+  }
+  changeText(textObj, QRCode) {
+    // Changes text dynamically for the item
+    console.log('TEXT: ', textObj);
+    console.log('QRCode: ', QRCode);
+
   }
   render() {
     return (
@@ -92,7 +113,9 @@ class App extends Component {
           />
           <Dashboard
             currentView={this.state.currentView}
-            inventory={INVENTORY.inventory}
+            inventory={this.state.inventoryList}
+            categories={CATEGORIES}
+            changeText={this.changeText}
           />
         </div>
       </div>

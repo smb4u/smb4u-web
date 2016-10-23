@@ -25,6 +25,7 @@
     "file-loader": "^0.9.0",
     "html-webpack-plugin": "^2.22.0",
     "react-addons-test-utils": "^15.3.1",
+    "riek": "^1.0.5",
     "sinon": "^1.17.5",
     "webpack": "^1.13.2",
     "webpack-dev-server": "^1.15.1"
