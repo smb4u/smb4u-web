@@ -32,6 +32,23 @@ html {
 .menubtn {
   margin: 5px;
   width: 250px;
+  background: #222;
+}
+
+.menubtn:hover {
+  background: #555;
+}
+
+.clothingbox {
+  flex-direction: row;
+  display:inline-block;
+}
+
+.something {
+  flex-direction: row;
+  display:inline-block;
+  /*border: 1px grey solid;*/
+  /*max-width: 65%; */
 }
 
 /*@media (max-width: 990px) {
