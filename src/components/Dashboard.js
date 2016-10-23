@@ -3,14 +3,13 @@ import InventoryView from './InventoryView';
 import AnalyticsView from './AnalyticsView';
 import MessagesView from './MessagesView';
 
-const Dashboard = ({ currentView, inventory, changeText, categories }) => {
+const Dashboard = ({ currentView, inventory, changeText }) => {
   let view;
   if (currentView === 'Manage Inventory') {
     view = (
       <InventoryView
         inventory={inventory}
         changeText={changeText}
-        categories={categories}
       />
     );
   } else if (currentView === 'Analytics') {
