@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint --fix --quiet src/",
-    "start": "webpack --watch src/ && nodemon src/server/server.js"
+    "start": "webpack --watch src/"
   },
   "keywords": [],
   "author": "",
